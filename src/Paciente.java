@@ -9,12 +9,13 @@ public class Paciente implements Comparable<Paciente> {
         this.prioridad = prioridad;
     }
 
-    public String toString() {
-        return nombre + ", " + sintoma + ", " + prioridad;
+    @Override
+    public int compareTo(Paciente otro) {
+        return this.prioridad - otro.prioridad;
     }
 
     @Override
-    public int compareTo(Paciente otro) {
-        return this.prioridad - otro.prioridad; // A < B < C...
+    public String toString() {
+        return nombre + ", " + sintoma + ", " + prioridad;
     }
 }
